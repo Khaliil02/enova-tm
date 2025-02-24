@@ -2,16 +2,15 @@
   Enova Ticket Manager is a web-based ticket management system designed to streamline communication between departments. Built with Node.js, Express, and PostgreSQL, this platform allows users to manage tickets, departments, and user roles efficiently.
 
 📌 Features :
-  ✅ User authentication and role management
-  ✅ Ticket creation, status updates, and tracking
-  ✅ Department-based ticket assignments
+  ✅ User authentication and role management.
+  ✅ Ticket creation, status updates, and tracking.
+  ✅ Department-based ticket assignments.
 
 📂 Table of Contents :
   📦 Installation
   ⚙️ Configuration
   🚀 Usage
   📡 API Endpoints
-  📝 License
   
 ##📦 Installation
   1. Clone the repository:
