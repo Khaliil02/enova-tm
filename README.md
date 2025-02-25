@@ -19,7 +19,7 @@ Enova Ticket Manager is a web-based ticket management system designed to streaml
 
 1. **Clone the repository:**
    ```sh
-   git clone https://github.com/Khaliil02/Enova-Ticket-Manager.git
+   git clone https://github.com/Khaliil02/enova-tm.git
    cd Enova-Ticket-Manager/back
    ```
 2. **Install dependencies:**
