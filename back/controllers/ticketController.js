@@ -3,7 +3,6 @@ const {
     getTicketById,
     getTicketByStatus,
     getTicketByPriority,
-    createTicket,
     updateTicketStatus,
     deleteTicket,
 } = require('../models/ticketModel');
