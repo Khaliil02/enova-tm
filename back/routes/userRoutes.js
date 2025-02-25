@@ -1,30 +1,27 @@
 const express = require('express');
 const router = express.Router();
-const pool = require('../config/db');
+const {
+  getAllUsers,
+  getUser,
+  addUser,
+  modifyUser,
+  removeUser,
+} = require('../controllers/userController');
 
 // Récupérer tous les utilisateurs
-router.get('/', async (req, res) => {
-  try {
-    const result = await pool.query('SELECT * FROM users');
-    res.json(result.rows);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+router.get('/', getAllUsers);
+
+// Récupérer un utilisateur par ID
+router.get('/:id', getUser);
 
 // Créer un utilisateur
-router.post('/', async (req, res) => {
-  const { name, email, is_admin } = req.body;
-  try {
-    const result = await pool.query(
-      'INSERT INTO users (name, email, is_admin) VALUES ($1, $2, $3) RETURNING *',
-      [name, email, is_admin]
-    );
-    res.status(201).json(result.rows[0]);
-  } catch (err) {
-    res.status(500).json({ error: err.message });
-  }
-});
+router.post('/', addUser);
+
+// Mettre à jour un utilisateur
+router.put('/:id', modifyUser);
+
+// Supprimer un utilisateur
+router.delete('/:id', removeUser);
 
 module.exports = router;
 
