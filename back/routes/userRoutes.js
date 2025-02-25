@@ -8,19 +8,19 @@ const {
   removeUser,
 } = require('../controllers/userController');
 
-// Récupérer tous les utilisateurs
+// Get all users
 router.get('/', getAllUsers);
 
-// Récupérer un utilisateur par ID
+// Get a user by ID
 router.get('/:id', getUser);
 
-// Créer un utilisateur
+// Create a new user
 router.post('/', addUser);
 
-// Mettre à jour un utilisateur
+// Update a user
 router.put('/:id', modifyUser);
 
-// Supprimer un utilisateur
+// Delete a user
 router.delete('/:id', removeUser);
 
 module.exports = router;

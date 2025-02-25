@@ -29,9 +29,9 @@ const getUser = async (req, res) => {
 };
 
 const addUser = async (req, res) => {
-  const { name, email, password } = req.body;
+  const { name, email, is_admin } = req.body;
   try {
-    const newUser = await createUser(name, email, password);
+    const newUser = await createUser(name, email, is_admin);
     res.status(201).json(newUser);
   } catch (err) {
     res.status(500).json({ error: err.message });
@@ -40,9 +40,9 @@ const addUser = async (req, res) => {
 
 const modifyUser = async (req, res) => {
   const { id } = req.params;
-  const { name, email, password } = req.body;
+  const { name, email, is_admin } = req.body;
   try {
-    const updatedUser = await updateUser(id, name, email, password);
+    const updatedUser = await updateUser(id, name, email, is_admin);
     if (!updatedUser) {
       return res.status(404).json({ error: 'User not found' });
     }

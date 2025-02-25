@@ -10,13 +10,13 @@ const getUserById = async (id) => {
   return result.rows[0];
 };
 
-const createUser = async (name, email, password) => {
-  const result = await pool.query('INSERT INTO users (name, email, password) VALUES ($1, $2, $3) RETURNING *', [name, email, password]);
+const createUser = async (name, email, is_admin) => {
+  const result = await pool.query('INSERT INTO users (name, email, is_admin) VALUES ($1, $2, $3) RETURNING *', [name, email, is_admin]);
   return result.rows[0];
 };
 
-const updateUser = async (id, name, email, password) => {
-  const result = await pool.query('UPDATE users SET name = $1, email = $2, password = $3 WHERE id = $4 RETURNING *', [name, email, password, id]);
+const updateUser = async (id, name, email, is_admin) => {
+  const result = await pool.query('UPDATE users SET name = $1, email = $2, is_admin = $3 WHERE id = $4 RETURNING *', [name, email, is_admin, id]);
   return result.rows[0];
 };
 
@@ -26,9 +26,9 @@ const deleteUser = async (id) => {
 };
 
 module.exports = {
-    getUsers,
-    getUserById,
-    createUser,
-    updateUser,
-    deleteUser,
+  getUsers,
+  getUserById,
+  createUser,
+  updateUser,
+  deleteUser,
 };
